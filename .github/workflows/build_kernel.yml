@@ -20,7 +20,7 @@ jobs:
       - name: pull kernel and complier
         run: |
           echo "拉取源码和编译器"
-          git clone --depth=1 https://github.com/Nanhumly-Staging/android_kernel_xiaomi_msm8998.git -b lineage23.0 kernel_src  #修改内核源码地址和分支名称
+          git clone --depth=1 https://github.com/Nanhumly-Staging/android_kernel_xiaomi_msm8998.git -b A16 lineage-23.0  #修改内核源码地址和分支名称
           echo "拉取源码完成"
           git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master
           echo "拉取编译器完成"
@@ -35,9 +35,9 @@ jobs:
         if: always()
         with:
           name: kernel
-          path: ${{ github.workspace }}/kernel_src/Image.gz-dtb
+          path: ${{ github.workspace }}/lineage-23.0/Image.gz-dtb
 #       - name: Release
 #         uses: softprops/action-gh-release@v1
 #         with:
-#           files: ${{ github.workspace }}/kernel_src/Image.gz-dtb
+#           files: ${{ github.workspace }}/lineage-23.0/Image.gz-dtb
 
